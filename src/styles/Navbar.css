@@ -1,0 +1,205 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(245, 241, 235, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-icon {
+  font-size: 1.5rem;
+  color: #666;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.home-icon:hover {
+  color: #4a90e2;
+  background: rgba(74, 144, 226, 0.1);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  background: none;
+  border: none;
+  color: #666;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 0.5rem 0;
+  font-family: inherit;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #4a90e2;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4a90e2;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-links span {
+  font-size: 0.9rem;
+  color: #666;
+  margin-right: 0.5rem;
+}
+
+/* Updated social link styles for SVG */
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: #666;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.social-link:hover {
+  background: #4a90e2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+/* SVG icon styles */
+.social-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Makes SVG white */
+  transition: all 0.3s ease;
+}
+
+/* Individual social media hover colors */
+.social-link:nth-child(2):hover {
+  background: #E4405F; /* Instagram gradient */
+}
+
+.social-link:nth-child(3):hover {
+  background: #0077B5; /* LinkedIn blue */
+}
+
+.social-link:nth-child(4):hover {
+  background: #0088CC; /* Telegram blue */
+}
+
+/* Fallback for emoji icons (if SVGs don't load) */
+.social-links a:not(.social-link) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background: #666;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.social-links a:not(.social-link):hover {
+  background: #4a90e2;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+  
+  .nav-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .nav-links {
+    gap: 1.5rem;
+    order: 2;
+  }
+  
+  .social-links {
+    order: 3;
+  }
+  
+  .social-links span {
+    display: none;
+  }
+  
+  .home-icon {
+    order: 1;
+  }
+  
+  .social-link,
+  .social-links a {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+  }
+  
+  .social-link,
+  .social-links a {
+    width: 28px;
+    height: 28px;
+    padding: 5px;
+    font-size: 0.9rem;
+  }
+}
