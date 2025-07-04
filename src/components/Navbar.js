@@ -9,14 +9,6 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   return (
     <nav className="navbar">
       <div className="nav-content">
-        <button 
-          className="home-icon" 
-          onClick={() => handleSectionChange('home')}
-          aria-label="Home"
-        >
-          🏠
-        </button>
-        
         <ul className="nav-links">
           <li>
             <button 
@@ -54,6 +46,19 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         
         <div className="social-links">
           <span>Let's connect on</span>
+          <a 
+            href="https://github.com/seemanteng" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            title="Github"
+            className="social-link"
+          >
+            <img 
+              src="/images/github.png" 
+              alt="Github" 
+              className="social-icon"
+            />
+          </a>
           <a 
             href="https://www.instagram.com/mantxng/" 
             target="_blank" 
