@@ -68,7 +68,7 @@ const About = () => {
           </p>
           <p>
             I love challenging myself, meeting new people and learning new things! Do drop 
-            a / connect with me even if it's just to make friends :)
+            a connect with me even if it's just to make friends :)
           </p>
         </div>
         
